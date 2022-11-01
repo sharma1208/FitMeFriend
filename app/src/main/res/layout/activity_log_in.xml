@@ -5,6 +5,8 @@
     android:id="@+id/logInTextView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:backgroundTint="@color/backgroundColor"
     tools:context=".LogInActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-63dp">
@@ -13,40 +15,33 @@
         android:id="@+id/logInEmail"
         android:layout_width="341dp"
         android:layout_height="41dp"
+        android:background="@drawable/sampleimage"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/primaryTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
+        app:layout_constraintVertical_bias="0.353" />
 
     <EditText
         android:id="@+id/logPassword"
         android:layout_width="341dp"
         android:layout_height="41dp"
+        android:background="@drawable/sampleimage"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43" />
-
-    <TextView
-        android:id="@+id/signUpTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FITME"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.446" />
 
     <Button
         android:id="@+id/logInSwitchToSignUp"
@@ -64,7 +59,10 @@
         android:id="@+id/logInButton"
         android:layout_width="272dp"
         android:layout_height="50dp"
+        android:background="@color/white"
+        android:backgroundTintMode="multiply"
         android:text="Log in"
+        app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -77,9 +75,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="or"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.63" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="361dp"
+        android:layout_height="247dp"
+        app:srcCompat="@drawable/fitmelogofr"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="-4dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

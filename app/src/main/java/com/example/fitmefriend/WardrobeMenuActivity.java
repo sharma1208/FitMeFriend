@@ -17,6 +17,10 @@ public class WardrobeMenuActivity extends AppCompatActivity {
         Intent intent = new Intent(WardrobeMenuActivity.this, SavedOutfitsActivity.class);
         startActivity(intent);
 
+    }
+    public void allMyClothesClicked(View view) {
+        Intent intent = new Intent(WardrobeMenuActivity.this, ViewClothesActivity.class);
+        startActivity(intent);
 
     }
 }

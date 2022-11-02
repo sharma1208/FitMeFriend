@@ -22,6 +22,7 @@
         android:id="@+id/all_clothes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="allMyClothesClicked"
         android:text="All My Clothes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

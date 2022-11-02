@@ -57,6 +57,7 @@
 
     <Button
         android:id="@+id/logInButton"
+        style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="272dp"
         android:layout_height="50dp"
         android:background="@color/white"

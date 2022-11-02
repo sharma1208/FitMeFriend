@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262383063232",
+    "project_id": "fitmefriend",
+    "storage_bucket": "fitmefriend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262383063232:android:4488849974ddb5f18b9d25",
+        "android_client_info": {
+          "package_name": "com.example.fitmefriend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262383063232-02useniuvgoshlnplgek8jjhr2tqg5e1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIwGLcUy9oYdFLWoV2-ZUn79qNk9dlfeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262383063232-02useniuvgoshlnplgek8jjhr2tqg5e1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

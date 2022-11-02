@@ -19,4 +19,10 @@ public class LogInActivity extends AppCompatActivity {
 
 
     }
+    public void signUpButtonClicked(View view) {
+        Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
+        startActivity(intent);
+
+
+    }
 }

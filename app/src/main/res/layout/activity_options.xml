@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="swipeButtonClicked"
     tools:context=".OptionsActivity">
 
     <Button
         android:id="@+id/swipe"
         android:layout_width="149dp"
         android:layout_height="61dp"
+        android:onClick="op"
         android:text="Swipe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,6 +22,7 @@
         android:id="@+id/wardrobeMenu"
         android:layout_width="149dp"
         android:layout_height="57dp"
+        android:onClick="menuButtonClicked"
         android:text="Wardrobe Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +34,7 @@
         android:id="@+id/uploadImage"
         android:layout_width="149dp"
         android:layout_height="61dp"
+        android:onClick="uploadButtonClicked"
         android:text="Upload Image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

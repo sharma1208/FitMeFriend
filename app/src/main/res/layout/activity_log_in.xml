@@ -15,7 +15,7 @@
         android:id="@+id/logInEmail"
         android:layout_width="341dp"
         android:layout_height="41dp"
-        android:background="@drawable/sampleimage"
+        android:background="@drawable/pinksparkles"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -32,7 +32,7 @@
         android:id="@+id/logPassword"
         android:layout_width="341dp"
         android:layout_height="41dp"
-        android:background="@drawable/sampleimage"
+        android:background="@drawable/pinksparkles"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
@@ -61,6 +61,7 @@
         android:layout_height="50dp"
         android:background="@color/white"
         android:backgroundTintMode="multiply"
+        android:onClick="logInButtonClicked"
         android:text="Log in"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,9 +85,13 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="361dp"
-        android:layout_height="247dp"
-        app:srcCompat="@drawable/fitmelogofr"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="-4dp" />
+        android:layout_width="259dp"
+        android:layout_height="192dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055"
+        app:srcCompat="@drawable/reallegitlogo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

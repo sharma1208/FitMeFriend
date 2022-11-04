@@ -87,6 +87,8 @@ public class LogInActivity extends AppCompatActivity  {
                                 Log.d(TAG, "Sign up failed for " + userName + " " + password +
                                         " because of \n"+ task.getResult());
 
+
+
                             }
                         }
                     });

@@ -13,7 +13,7 @@
         android:id="@+id/swipe"
         android:layout_width="149dp"
         android:layout_height="61dp"
-        android:onClick="op"
+        android:onClick="swipeButtonClicked"
         android:text="swipe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

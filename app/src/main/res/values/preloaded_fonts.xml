@@ -3,6 +3,8 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alata</item>
         <item>@font/arsenal</item>
+        <item>@font/biryani</item>
+        <item>@font/biryani_bold</item>
         <item>@font/biryani_light</item>
         <item>@font/carrois_gothic_sc</item>
         <item>@font/chonburi</item>

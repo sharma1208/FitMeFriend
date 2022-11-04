@@ -26,9 +26,6 @@
             android:name=".UploadActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
-            android:exported="false" />
-        <activity
             android:name=".SavedOutfitsActivity"
             android:exported="false" />
         <activity

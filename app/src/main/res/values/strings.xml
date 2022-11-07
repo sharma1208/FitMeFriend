@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">FitMeFriend</string>
+
+        <string-array name="memoryRatings">
+            <item>Pants</item>
+            <item>Shirts </item>
+        </string-array>
+
 </resources>

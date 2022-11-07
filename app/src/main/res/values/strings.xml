@@ -2,8 +2,9 @@
     <string name="app_name">FitMeFriend</string>
 
         <string-array name="memoryRatings">
-            <item>Pants</item>
-            <item>Shirts </item>
+            <item>Category</item>
+            <item>Pant</item>
+            <item>Shirt</item>
         </string-array>
 
 </resources>

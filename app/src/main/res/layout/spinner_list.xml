@@ -2,10 +2,11 @@
 <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/priorityChosen"
-    android:text="My Spinner"
+    android:text="Category"
     android:background="@color/secondaryDarkColor"
     android:textColor="@color/primaryTextColor"
-
-     android:layout_height="3dp"
-     android:layout_width="20dp"
+    android:textSize="30dp"
+    android:textAlignment="center"
+     android:layout_height="55dp"
+     android:layout_width="match_parent"
     />

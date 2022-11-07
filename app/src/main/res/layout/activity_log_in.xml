@@ -97,7 +97,7 @@
         android:fontFamily="@font/biryani_bold"
         android:hint="password"
         android:inputType="textPersonName"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/backgroundColor"
         android:textColorHint="@color/backgroundColor"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

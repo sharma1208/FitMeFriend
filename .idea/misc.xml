@@ -3,11 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_log_in.xml" value="0.1" />
-        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_options.xml" value="0.2712962962962963" />
-        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_outfit_swipe.xml" value="0.2712962962962963" />
-        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_sign_up.xml" value="0.20462962962962963" />
-        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_wardrobe_menu.xml" value="0.2712962962962963" />
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_log_in.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_main.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_options.xml" value="0.17617753623188406" />
@@ -17,15 +12,17 @@
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_upload.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_view_clothes.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_wardrobe_menu.xml" value="0.1" />
-        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_log_in.xml" value="0.33" />
-<<<<<<< Updated upstream
-=======
-        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_options.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3675" />
+        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_log_in.xml" value="1.0" />
+        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_options.xml" value="0.33" />
         <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_outfit_swipe.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_saved_outfits.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
->>>>>>> Stashed changes
+        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_upload.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_view_clothes.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_wardrobe_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.67" />
+        <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/spinner_list.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

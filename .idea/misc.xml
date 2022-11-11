@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2855" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_outfit_swipe.xml" value="0.1" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_upload.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/pant_layout.xml" value="0.1" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/shirt_layout.xml" value="0.1" />
+        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/spinner_list.xml" value="0.1" />
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_log_in.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_main.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/sharma1208/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_options.xml" value="0.17617753623188406" />

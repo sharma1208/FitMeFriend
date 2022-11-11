@@ -8,7 +8,7 @@
     tools:context=".OutfitSwipeActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/uploadImageButton"
         android:layout_width="89dp"
         android:layout_height="82dp"
         android:background="@drawable/ic_baseline_favorite_24"

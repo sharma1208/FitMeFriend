@@ -18,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class LogInActivity extends AppCompatActivity  {
-
     // xml elements
     Button logInB, signUpB;
     EditText userNameET, passwordET;

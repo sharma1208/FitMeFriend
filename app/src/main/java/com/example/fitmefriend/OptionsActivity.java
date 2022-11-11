@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+
 public class OptionsActivity extends AppCompatActivity {
 
     public final String TAG = "Denna";

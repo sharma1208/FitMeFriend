@@ -27,9 +27,21 @@
         <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_wardrobe_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.67" />
         <entry key="..\:/Users/tian9801/Documents/GitHub/FitMeFriend/app/src/main/res/layout/spinner_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/upload.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_options.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_outfit_swipe.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_saved_outfits.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_upload.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_view_clothes.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_wardrobe_menu.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/pant_layout.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/shirt_layout.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/spinner_list.xml" value="0.1" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

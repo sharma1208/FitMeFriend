@@ -8,6 +8,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.fitmefriend.adapter.PantsAdapter;
+import com.example.fitmefriend.adapter.ShirtsAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class OutfitSwipeActivity extends AppCompatActivity {
 
     private RecyclerView shirtRecyclerView, pantRecyclerView;
@@ -17,13 +23,19 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_outfit_swipe);
         shirtRecyclerView = findViewById(R.id.shirtRecyclerView);
         shirtRecyclerView.setHasFixedSize(true);
+        List<Shirts> shirtsList = new ArrayList<>();
+
+        shirtsList.add(new Shirts(R.drawable.sampleimage));
+        ShirtsAdapter shirtsAdapter = new ShirtsAdapter(shirtsList);
+        shirtRecyclerView.setAdapter(shirtsAdapter);
+
         pantRecyclerView = findViewById(R.id.pantRecyclerView);
         pantRecyclerView.setHasFixedSize(true);
-    }
-    public void saveWardrobe(View view) {
-        Intent intent = new Intent(OutfitSwipeActivity.this, SavedOutfitsActivity.class);
-        startActivity(intent);
+        List<Pants> pantsList = new ArrayList<>();
 
+        pantsList.add(new Pants(R.drawable.sampleimage));
+        PantsAdapter pantsAdapter = new PantsAdapter(pantsList);
+        pantRecyclerView.setAdapter(pantsAdapter);
     }
 
 

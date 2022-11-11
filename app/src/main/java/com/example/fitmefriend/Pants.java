@@ -16,6 +16,10 @@ public class Pants implements Parcelable{
         this.pdocId= "No doc Id";
     }
 
+    public Pants(int pImageResourceId) {
+        this.pImageResourceId = pImageResourceId;
+    }
+
     public Pants(String pColor, String pCategory, int pImageResourceId, String pdocId) {
         this.pColor = pColor;
         this.pCategory = pCategory;

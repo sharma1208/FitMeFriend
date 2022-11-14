@@ -33,7 +33,6 @@
 
     <Button
         android:id="@+id/logInSwitchToSignUp"
-        style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="146dp"
         android:layout_height="42dp"
         android:backgroundTint="@color/backgroundColor"
@@ -55,7 +54,6 @@
 
     <Button
         android:id="@+id/logInSwitchToSignUp3"
-        style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="238dp"
         android:layout_height="53dp"
         android:backgroundTint="@color/primaryTextColor"

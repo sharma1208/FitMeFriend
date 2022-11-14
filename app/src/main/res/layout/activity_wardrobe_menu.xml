@@ -9,7 +9,6 @@
 
     <Button
         android:id="@+id/saved_outfits_button"
-        style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="238dp"
         android:layout_height="53dp"
         android:backgroundTint="@color/primaryTextColor"
@@ -31,7 +30,6 @@
 
     <Button
         android:id="@+id/all_clothes_button"
-        style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="238dp"
         android:layout_height="53dp"
         android:backgroundTint="@color/primaryTextColor"

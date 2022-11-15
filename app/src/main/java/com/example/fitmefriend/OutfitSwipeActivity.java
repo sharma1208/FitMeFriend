@@ -28,6 +28,8 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         List<Shirts> shirtsList = new ArrayList<>();
 
         shirtsList.add(new Shirts(R.drawable.sampleimage));
+        shirtsList.add(new Shirts(R.drawable.sampleimage));
+        shirtsList.add(new Shirts(R.drawable.sampleimage));
         ShirtsAdapter shirtsAdapter = new ShirtsAdapter(shirtsList);
         shirtRecyclerView.setAdapter(shirtsAdapter);
 
@@ -36,6 +38,8 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         pantRecyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
         List<Pants> pantsList = new ArrayList<>();
 
+        pantsList.add(new Pants(R.drawable.sampleimage));
+        pantsList.add(new Pants(R.drawable.sampleimage));
         pantsList.add(new Pants(R.drawable.sampleimage));
         PantsAdapter pantsAdapter = new PantsAdapter(pantsList);
         pantRecyclerView.setAdapter(pantsAdapter);

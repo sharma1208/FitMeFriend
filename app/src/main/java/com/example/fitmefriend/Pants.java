@@ -23,7 +23,9 @@ public class Pants implements Parcelable{
         this.pdocId = "No doc Id";
     }
 
-
+    public Pants(int pImageResourceId) {
+        this.pImageResourceId = pImageResourceId;
+    }
 
     /** This is a "constructor" of sorts that is needed with the Parceable interface to
      * tell the intent how to create a Memory object when it is received from the intent

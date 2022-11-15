@@ -23,6 +23,10 @@ public class Shirts implements Parcelable{
         this.sdocId = sdocId;
     }
 
+    public Shirts(int sImageResourceId) {
+        this.sImageResourceId = sImageResourceId;
+    }
+
     /** This is a "constructor" of sorts that is needed with the Parceable interface to
      * tell the intent how to create a Memory object when it is received from the intent
      * basically it is setting each instance variable as a String or Int

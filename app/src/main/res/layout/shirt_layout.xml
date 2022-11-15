@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/bestSellerImage"
-        android:layout_width="393dp"
-        android:layout_height="523dp"
+        android:layout_width="386dp"
+        android:layout_height="310dp"
         android:scaleType="fitXY"
         android:src="@drawable/sampleimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,5 +22,3 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

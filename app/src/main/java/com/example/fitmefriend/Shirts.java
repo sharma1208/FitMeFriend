@@ -3,7 +3,7 @@ package com.example.fitmefriend;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Shirts implements Parcelable{
+public class Shirts extends Clothes implements Parcelable{
     private String sColor;
     private String sCategory;
     private  int sImageResourceId;

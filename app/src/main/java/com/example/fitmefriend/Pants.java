@@ -4,26 +4,30 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Pants implements Parcelable{
-    private String pColor;
     private String pCategory;
-    private  int pImageResourceId;
+    private  String pImageResourceId;
     private String pdocId;
 
+
     public Pants() {
-        this.pColor = "";
         this.pCategory = "";
-        this.pImageResourceId = 0;
         this.pdocId= "No doc Id";
     }
 
-    public Pants(String pColor, String pCategory, int pImageResourceId, String pdocId) {
-        this.pColor = pColor;
+    public Pants(String pCategory, String pImageResourceId, String pdocId) {
+
         this.pCategory = pCategory;
         this.pImageResourceId = pImageResourceId;
         this.pdocId = "No doc Id";
     }
 
-    public Pants(int pImageResourceId) {
+    public Pants(String pCategory, String pImageResourceId) {
+        this.pCategory = pCategory;
+        this.pImageResourceId = pImageResourceId;
+        this.pdocId= "No doc Id";
+    }
+
+    public Pants(String pImageResourceId) {
         this.pImageResourceId = pImageResourceId;
     }
 
@@ -36,10 +40,10 @@ public class Pants implements Parcelable{
      */
 
     public Pants(Parcel parcel) {
-       pColor = parcel.readString();
-       pCategory = parcel.readString();
-       pImageResourceId = parcel.readInt();
-       pdocId = parcel.readString();
+
+        pCategory = parcel.readString();
+        pImageResourceId = parcel.readString();
+        pdocId = parcel.readString();
     }
 
     /**
@@ -51,14 +55,16 @@ public class Pants implements Parcelable{
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(pColor);
+
         dest.writeString(pCategory);
-        dest.writeInt(pImageResourceId);
+        dest.writeString(pImageResourceId);
         dest.writeString(pdocId);
 
 
 
     }
+
+
 
 
     // this code is needed for the Memory class to work with Parcelable
@@ -98,14 +104,6 @@ public class Pants implements Parcelable{
 
 
 
-    public String getpColor() {
-        return pColor;
-    }
-
-    public void setpColor(String pColor) {
-        this.pColor = pColor;
-    }
-
     public String getpCategory() {
         return pCategory;
     }
@@ -114,11 +112,11 @@ public class Pants implements Parcelable{
         this.pCategory = pCategory;
     }
 
-    public int getpImageResourceId() {
+    public String getpImageResourceId() {
         return pImageResourceId;
     }
 
-    public void setpImageResourceId(int pImageResourceId) {
+    public void setpImageResourceId(String imageResourceId) {
         this.pImageResourceId = pImageResourceId;
     }
 }

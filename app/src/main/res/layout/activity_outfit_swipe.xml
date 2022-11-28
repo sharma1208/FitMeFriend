@@ -42,8 +42,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.188" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/ssButton"
+        android:layout_width="89dp"
+        android:layout_height="82dp"
+        android:background="@drawable/ic_baseline_favorite_24"
+        android:capitalize="none"
+        android:fontFamily="@font/biryani_bold"
+        android:text="save"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/backgroundColor"
+        android:textScaleX="1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

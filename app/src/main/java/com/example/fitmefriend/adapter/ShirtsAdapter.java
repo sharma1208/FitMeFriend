@@ -29,7 +29,9 @@ public class ShirtsAdapter extends RecyclerView.Adapter<ShirtsAdapter.ShirtsView
 
     @Override
     public void onBindViewHolder(@NonNull ShirtsViewHolder holder, int position) {
-        holder.mImageView.setImageResource(shirtsList.get(position).getImageResourceId());
+
+        int id= Integer.parseInt(shirtsList.get(position).getImageResourceId());
+        holder.mImageView.setImageResource(id);
     }
 
     @Override

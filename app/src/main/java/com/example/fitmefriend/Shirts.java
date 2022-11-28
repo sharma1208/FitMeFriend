@@ -4,26 +4,26 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Shirts implements Parcelable{
-    private String sColor;
     private String sCategory;
-    private  int sImageResourceId;
+    private  String sImageResourceId;
     private String sdocId;
 
     public Shirts() {
-        sColor = "";
+
         sCategory = "";
-        sImageResourceId = 0;
         sdocId ="No doc Id";
     }
 
-    public Shirts(String color, String category, int imageResourceId, String sdocId) {
-        this.sColor = color;
+
+
+    public Shirts(String category, String imageResourceId) {
         this.sCategory = category;
         this.sImageResourceId = imageResourceId;
         this.sdocId = sdocId;
     }
 
-    public Shirts(int sImageResourceId) {
+
+    public Shirts(String sImageResourceId) {
         this.sImageResourceId = sImageResourceId;
     }
 
@@ -36,11 +36,11 @@ public class Shirts implements Parcelable{
      */
 
     public Shirts(Parcel parcel) {
-        sColor = parcel.readString();
         sCategory = parcel.readString();
-        sImageResourceId = parcel.readInt();
+        sImageResourceId = parcel.readString();
         sdocId = parcel.readString();
     }
+
 
     /**
      * This is what is used when we send the Memory object through an intent
@@ -51,12 +51,9 @@ public class Shirts implements Parcelable{
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(sColor);
         dest.writeString(sCategory);
-        dest.writeInt(sImageResourceId);
+        dest.writeString(sImageResourceId);
         dest.writeString(sdocId);
-
-
 
     }
 
@@ -77,6 +74,7 @@ public class Shirts implements Parcelable{
             };
 
 
+
     /**
      * This method is required for the Parceable interface.  As of now, this method
      * is in the default state and doesn't really do anything.
@@ -95,13 +93,7 @@ public class Shirts implements Parcelable{
         return 0;
     }
 
-    public String getColor() {
-        return sColor;
-    }
 
-    public void setColor(String color) {
-        this.sColor = color;
-    }
 
     public String getCategory() {
         return sCategory;
@@ -111,11 +103,11 @@ public class Shirts implements Parcelable{
         this.sCategory = category;
     }
 
-    public int getImageResourceId() {
+    public String getImageResourceId() {
         return sImageResourceId;
     }
 
-    public void setImageResourceId(int imageResourceId) {
+    public void setImageResourceId(String imageResourceId) {
         this.sImageResourceId = imageResourceId;
     }
 }

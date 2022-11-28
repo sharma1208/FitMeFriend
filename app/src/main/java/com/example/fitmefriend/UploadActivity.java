@@ -13,10 +13,12 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -39,6 +41,9 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     Uri imageUri;
     StorageReference storageReference;
     ProgressDialog progressDialog;
+    TextView spinnerCategory;
+
+
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -63,16 +68,29 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         }));
 
         spinner = findViewById(R.id.mySpinner);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_list,
                 getResources().getStringArray(R.array.memoryRatings));
 
         // this attaches my custom row design (how I want each row to look)
         adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
-
+        spinnerCategory = findViewById(R.id.priorityChosen);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
     }
     private void uploadImage() {
+
+        // Everyone needs this part below this comment
+        Log.d("Denna", "Completed ur mom");
+        String imageStringUri = imageUri.toString();
+        if(spinnerSelectedText.equals("Shirt")) {
+
+            Shirts m = new Shirts("Shirt", imageStringUri);
+            LogInActivity.firebaseHelper.addDataShirts(m);
+        }else{
+            Pants p = new Pants("Pant", imageStringUri);
+            LogInActivity.firebaseHelper.addDataPants(p);
+        }
 
         // Lets user know if file is being uploaded
         progressDialog = new ProgressDialog(this);
@@ -142,6 +160,8 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
 
 
 }

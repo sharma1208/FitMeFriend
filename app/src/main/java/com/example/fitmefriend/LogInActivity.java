@@ -41,7 +41,31 @@ public class LogInActivity extends AppCompatActivity  {
         signUpB = findViewById(R.id.logInSwitchToSignUp);
         userNameET = findViewById(R.id.logInEmail);
         passwordET = findViewById(R.id.logPassword);
+
+
+
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        updateUI();
+    }
+
+
+
+    public void updateUI() {
+        // if the user is already logged in, then they bypass this screen
+        Log.d(TAG, "inside updateUI: " + firebaseHelper.getmAuth().getUid());
+        if (firebaseHelper.getmAuth().getUid() != null) {
+            firebaseHelper.attachReadDataToUserPants();
+            firebaseHelper.attachReadDataToUserShirts();
+            Intent intent = new Intent(LogInActivity.this, OptionsActivity.class);
+            startActivity(intent);
+        }
+    }
+
 
 
 
@@ -84,22 +108,27 @@ public class LogInActivity extends AppCompatActivity  {
                                 firebaseHelper.updateUid(firebaseHelper.getmAuth().getUid());
                                 Log.d(TAG, userName + " created and logged in");
 
-                                // we will implement this later
-                                // updateIfLoggedIn();
-                                // firebaseHelper.attachReadDataToUser();
+                                firebaseHelper.addUserToFirestore(userName,
+                                        firebaseHelper.getmAuth().getUid());
+                                firebaseHelper.attachReadDataToUserPants();
+
+                                firebaseHelper.addUserToFirestore(userName,
+                                        firebaseHelper.getmAuth().getUid());
+                                firebaseHelper.attachReadDataToUserShirts();
+
 
                                 Intent intent = new Intent(LogInActivity.this, OptionsActivity.class);
                                 startActivity(intent);
                             }
                             else {
 
-                                 /*
-   This prevents the app from CRASHING when the user enters bad items
-   (duplicate email or badly formatted email most likely)
+                                /*
+  This prevents the app from CRASHING when the user enters bad items
+  (duplicate email or badly formatted email most likely)
 
-   https://stackoverflow.com/questions/37859582/how-to-catch-a-firebase-auth-specific-exceptions
+  https://stackoverflow.com/questions/37859582/how-to-catch-a-firebase-auth-specific-exceptions
 
-    */
+   */
 
                                 try {
                                     throw task.getException();
@@ -138,7 +167,7 @@ public class LogInActivity extends AppCompatActivity  {
 
 
 
-    
+
 
     public void logInClicked(View view) {
         Log.i(TAG, "Log in clicked");
@@ -153,13 +182,13 @@ public class LogInActivity extends AppCompatActivity  {
                                 // Sign in success, update currently signed in user's info
                                 firebaseHelper.updateUid(firebaseHelper.getmAuth().getUid());
 
-                                // we will implement this later
-                                // updateIfLoggedIn();
-                                // firebaseHelper.attachReadDataToUser();
+                                firebaseHelper.attachReadDataToUserPants();
+                                firebaseHelper.attachReadDataToUserShirts();
 
                                 Log.d(TAG, userName + " logged in");
 
-                                Intent intent = new Intent(LogInActivity.this, OptionsActivity.class);
+                                Intent intent = new Intent(LogInActivity
+                                        .this, OptionsActivity.class);
                                 startActivity(intent);
                             }
                             else {
@@ -247,5 +276,3 @@ public class LogInActivity extends AppCompatActivity  {
 
 
 }
-
-

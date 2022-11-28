@@ -29,7 +29,8 @@ public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHol
 
     @Override
     public void onBindViewHolder(@NonNull PantsViewHolder holder, int position) {
-        holder.mImageView.setImageResource(pantsList.get(position).getpImageResourceId());
+        int id= Integer.parseInt(pantsList.get(position).getpImageResourceId());
+        holder.mImageView.setImageResource(id);
     }
 
     @Override

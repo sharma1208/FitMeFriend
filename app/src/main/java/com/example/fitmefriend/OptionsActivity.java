@@ -34,7 +34,7 @@ public class OptionsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void logOutClicked(View view) {
+    public void logOut(View view) {
         LogInActivity.firebaseHelper.logOutUser();
         Log.i(TAG, "user logged out");
         Intent intent = new Intent(OptionsActivity.this, LogInActivity.class);

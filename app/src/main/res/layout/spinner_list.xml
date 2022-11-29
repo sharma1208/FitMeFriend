@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/priorityChosen"
-    android:text="Category"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
     android:background="@color/secondaryDarkColor"
-    android:textColor="@color/primaryTextColor"
-    android:textSize="30dp"
+    android:fontFamily="@font/biryani_bold"
+    android:text="category"
     android:textAlignment="center"
-     android:layout_height="55dp"
-     android:layout_width="match_parent"
-    />
+    android:textColor="@color/backgroundColor"
+    android:textSize="20dp"
+    android:textStyle="bold" />
+

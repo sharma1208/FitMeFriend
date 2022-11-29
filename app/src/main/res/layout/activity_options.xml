@@ -10,33 +10,11 @@
     tools:context=".OptionsActivity">
 
     <Button
-        android:id="@+id/uploadImage2"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="238dp"
-        android:layout_height="53dp"
-        android:backgroundTint="@color/primaryTextColor"
-        android:onClick="logOut"
-        android:shadowColor="@android:color/transparent"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="0"
-        android:text="log out"
-        android:textColor="@color/backgroundColor"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
-
-    <Button
         android:id="@+id/swipe"
         style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="238dp"
         android:layout_height="53dp"
-        android:backgroundTint="@color/primaryTextColor"
+        android:backgroundTint="@color/primaryDarkColor"
         android:onClick="Swipe"
         android:shadowColor="@android:color/transparent"
         android:shadowDx="0"
@@ -58,7 +36,7 @@
         style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="238dp"
         android:layout_height="53dp"
-        android:backgroundTint="@color/primaryTextColor"
+        android:backgroundTint="@color/primaryDarkColor"
         android:onClick="WardrobeMenu"
         android:shadowColor="@android:color/transparent"
         android:shadowDx="0"
@@ -74,6 +52,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.634" />
+
+    <Button
+        android:id="@+id/logOutButton"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="238dp"
+        android:layout_height="53dp"
+        android:backgroundTint="@color/primaryDarkColor"
+        android:onClick="logOutClicked"
+        android:shadowColor="@android:color/transparent"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:text="log out"
+        android:textColor="@color/backgroundColor"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752" />
 
     <Button
         android:id="@+id/savedOutfits"
@@ -102,7 +102,7 @@
         style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="238dp"
         android:layout_height="53dp"
-        android:backgroundTint="@color/primaryTextColor"
+        android:backgroundTint="@color/primaryDarkColor"
         android:onClick="UploadPicture"
         android:shadowColor="@android:color/transparent"
         android:shadowDx="0"
@@ -126,12 +126,16 @@
         android:fontFamily="@font/biryani_bold"
         android:gravity="center"
         android:text="where to?"
+        android:textColor="@color/primaryDarkColor"
         android:textColorHighlight="@color/white"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.239" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

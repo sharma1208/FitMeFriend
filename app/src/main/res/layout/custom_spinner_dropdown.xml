@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/priorityChosen"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:text="My Choice"
-    android:background="@color/secondaryDarkColor"
-    android:textColor="@color/primaryTextColor"
     android:layout_gravity="center"
-    />
+    android:background="@color/secondaryDarkColor"
+    android:fontFamily="@font/biryani_bold"
+    android:text="my choice"
+    android:textColor="@color/backgroundColor"
+    android:textSize="20sp"
+    android:textStyle="bold" />

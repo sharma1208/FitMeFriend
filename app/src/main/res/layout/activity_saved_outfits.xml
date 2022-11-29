@@ -14,7 +14,7 @@
         android:fontFamily="@font/biryani_bold"
         android:text="my outfits"
         android:textAlignment="center"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/primaryDarkColor"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,25 +1,34 @@
 
 package com.example.fitmefriend.adapter;
 
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fitmefriend.OutfitSwipeActivity;
 import com.example.fitmefriend.R;
 import com.example.fitmefriend.Pants;
 
 import java.util.List;
 
 public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHolder> {
-
     private List<Pants> pantsList;
-    public PantsAdapter(List<Pants> pantsList){
+    private Context context;
+
+
+
+    public PantsAdapter(List<Pants> pantsList, Context context) {
         this.pantsList = pantsList;
+        this.context = context;
     }
+
     @NonNull
     @Override
     public PantsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,11 +36,16 @@ public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHol
         return new PantsViewHolder(view);
     }
 
+
+
+
     @Override
     public void onBindViewHolder(@NonNull PantsViewHolder holder, int position) {
-        int id= Integer.parseInt(pantsList.get(position).getpImageResourceId());
-        holder.mImageView.setImageResource(id);
+        Pants p= pantsList.get(position);
+        holder.mImageView.setImageResource(Integer.parseInt(p.getpImageResourceId()));
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -45,7 +59,18 @@ public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHol
 
 
             mImageView = itemView.findViewById(R.id.bestSellerImage);
+
         }
+    }
+
+
+
+    public List<Pants> getPantsList() {
+        return pantsList;
+    }
+
+    public void setPantsList(List<Pants> pantsList) {
+        this.pantsList = pantsList;
     }
 }
 

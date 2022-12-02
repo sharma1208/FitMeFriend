@@ -48,6 +48,7 @@
 
     <Button
         android:id="@+id/ssButton"
+        android:onClick="makeOutfit"
         android:layout_width="89dp"
         android:layout_height="82dp"
         android:background="@drawable/ic_baseline_favorite_24"

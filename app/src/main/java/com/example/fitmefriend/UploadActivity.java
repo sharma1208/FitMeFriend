@@ -97,6 +97,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         } else {
             Pants p = new Pants("Pant", imageStringUri);
             //LogInActivity.firebaseHelper.addDataPants(p);
+            p.setpImageResourceId(uriToAdd);
             uploadImage(p);
         }
 

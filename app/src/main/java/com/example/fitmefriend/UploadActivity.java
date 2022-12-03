@@ -238,7 +238,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         // check if selectImage selected an image
         if (requestCode == 100 && data != null) {
             imageUri = data.getData();
-            //binding.firebaseimage.setImageURI(imageUri);
+            binding.firebaseimage.setImageURI(imageUri);
             uriToAdd = imageUri.toString();
             Log.i("Denna", "Uri:" + imageUri);
         }

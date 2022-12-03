@@ -49,8 +49,6 @@ public class FirebaseHelper {
     private static String uid = null;      // var will be updated for currently signed in user
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    ArrayList<Pants> myPants = new ArrayList<>();
-    private ArrayList<Shirts> myShirts = new ArrayList<>();
 
 
     public FirebaseHelper() {
@@ -83,7 +81,7 @@ public class FirebaseHelper {
             readDataPants(new FirestoreCallbackPants() {
                 @Override
                 public void onCallback(ArrayList<Pants> pantsArrayList) {
-                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + myPants.toString());
+                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + OutfitSwipeActivity.pantsList.toString());
                 }
             });
         }
@@ -100,7 +98,7 @@ public class FirebaseHelper {
             readDataShirts(new FirestoreCallbackShirts() {
                 @Override
                 public void onCallback(ArrayList<Shirts> shirtsArrayList) {
-                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + myShirts.toString());
+                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + OutfitSwipeActivity.shirtsList.toString());
                 }
             });
         }
@@ -137,7 +135,7 @@ public class FirebaseHelper {
         addDataPants(p, new FirestoreCallbackPants() {
             @Override
             public void onCallback(ArrayList<Pants> myList) {
-                Log.i(TAG, "Inside addData, onCallback :" + myPants.toString());
+                Log.i(TAG, "Inside addData, onCallback :" + OutfitSwipeActivity.pantsList.toString());
             }
         });
     }
@@ -148,20 +146,20 @@ public class FirebaseHelper {
         addDataShirts(s, new FirestoreCallbackShirts() {
             @Override
             public void onCallback(ArrayList<Shirts> myList) {
-                Log.i(TAG, "Inside addData, onCallback :" + myShirts.toString());
+                Log.i(TAG, "Inside addData, onCallback :"  + OutfitSwipeActivity.shirtsList.toString());
             }
         });
     }
 
 
     private void addDataPants(Pants p,  FirestoreCallbackPants firestoreCallbackPants) {
-        db.collection("users").document(uid).collection("myPants")
+        db.collection("users").document(uid).collection("pantsList")
                 .add(p)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         // This will set the docID key for the Memory that was just added.
-                        db.collection("users").document(uid).collection("myPants").
+                        db.collection("users").document(uid).collection("pantsList").
                                 document(documentReference.getId()).update("docID", documentReference.getId());
                         Log.i(TAG, "just added " + p.getpCategory());
                         readDataPants(firestoreCallbackPants);
@@ -176,13 +174,13 @@ public class FirebaseHelper {
     }
 
     private void addDataShirts(Shirts s,  FirestoreCallbackShirts firestoreCallbackShirts) {
-        db.collection("users").document(uid).collection("myShirts")
+        db.collection("users").document(uid).collection("shirtsList")
                 .add(s)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         // This will set the docID key for the Memory that was just added.
-                        db.collection("users").document(uid).collection("myShirts").
+                        db.collection("users").document(uid).collection("shirtsList").
                                 document(documentReference.getId()).update("docID", documentReference.getId());
                         Log.i(TAG, "just added " + s.getCategory());
                         readDataShirts(firestoreCallbackShirts);
@@ -197,13 +195,7 @@ public class FirebaseHelper {
     }
 
 
-    public ArrayList<Pants> getPantsArrayList() {
-        return myPants;
-    }
 
-    public ArrayList<Shirts> getShirtsArrayList() {
-        return myShirts;
-    }
 
 
 
@@ -215,7 +207,7 @@ certain things from occurring until after the onSuccess is finished.
 */
 
     private void readDataPants(FirestoreCallbackPants firestoreCallbackPants) {
-        myPants.clear();        // empties the AL so that it can get a fresh copy of data
+        OutfitSwipeActivity.pantsList.clear();        // empties the AL so that it can get a fresh copy of data
         db.collection("users").document(uid).collection("myPants")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -224,12 +216,12 @@ certain things from occurring until after the onSuccess is finished.
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot doc: task.getResult()) {
                                 Pants pants = doc.toObject(Pants.class);
-                                myPants.add(pants);
+                                OutfitSwipeActivity.pantsList.add(pants);
 
                             }
 
-                            Log.i(TAG, "Success reading data: "+ myPants.toString());
-                            firestoreCallbackPants.onCallback(myPants);
+                            Log.i(TAG, "Success reading data: "+  OutfitSwipeActivity.pantsList.toString());
+                            firestoreCallbackPants.onCallback(OutfitSwipeActivity.pantsList);
                         }
                         else {
                             Log.d(TAG, "Error getting documents: " + task.getException());
@@ -240,7 +232,7 @@ certain things from occurring until after the onSuccess is finished.
     }
 
     private void readDataShirts(FirestoreCallbackShirts firestoreCallbackShirts) {
-        myShirts.clear();
+        OutfitSwipeActivity.shirtsList.clear();
         db.collection("users").document(uid).collection("myShirts")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -249,12 +241,12 @@ certain things from occurring until after the onSuccess is finished.
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot doc: task.getResult()) {
                                 Shirts shirts = doc.toObject(Shirts.class);
-                                myShirts.add(shirts);
+                                 OutfitSwipeActivity.shirtsList.add(shirts);
 
                             }
 
-                            Log.i(TAG, "Success reading data: "+ myShirts.toString());
-                            firestoreCallbackShirts.onCallback(myShirts);
+                            Log.i(TAG, "Success reading data: "+ OutfitSwipeActivity.shirtsList.toString());
+                            firestoreCallbackShirts.onCallback(OutfitSwipeActivity.shirtsList);
                         }
                         else {
                             Log.d(TAG, "Error getting documents: " + task.getException());

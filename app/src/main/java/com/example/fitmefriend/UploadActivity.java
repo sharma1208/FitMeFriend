@@ -23,8 +23,11 @@ import android.widget.Toast;
 
 
 import com.example.fitmefriend.databinding.ActivityUploadBinding;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -34,7 +37,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class UploadActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class UploadActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Spinner spinner;
     String spinnerSelectedText = "none";
     ActivityUploadBinding binding;
@@ -42,7 +45,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     StorageReference storageReference;
     ProgressDialog progressDialog;
     TextView spinnerCategory;
-
+    String uriToAdd = "none";
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -63,7 +66,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         binding.uploadImageButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadImage();
+                uploadImageButtonClicked(v);
             }
         }));
 
@@ -78,19 +81,64 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
     }
-    private void uploadImage() {
+
+
+    public void uploadImageButtonClicked(View view) {
 
         // Everyone needs this part below this comment
         Log.d("Denna", "Completed ur mom");
         String imageStringUri = imageUri.toString();
-        if(spinnerSelectedText.equals("Shirt")) {
+        if (spinnerSelectedText.equals("Shirt")) {
 
             Shirts m = new Shirts("Shirt", imageStringUri);
-            LogInActivity.firebaseHelper.addDataShirts(m);
-        }else{
+            m.setImageResourceId(uriToAdd);     // testing w denna
+            //LogInActivity.firebaseHelper.addDataShirts(m);
+            uploadImage(m);
+        } else {
             Pants p = new Pants("Pant", imageStringUri);
-            LogInActivity.firebaseHelper.addDataPants(p);
+            //LogInActivity.firebaseHelper.addDataPants(p);
+            p.setpImageResourceId(uriToAdd);
+            uploadImage(p);
         }
+
+
+
+
+    }
+
+
+
+    public void uploadImage(Pants p) {
+        imageUri = uploadImage(new StorageCallback() {
+            @Override
+            public void onCallback(Uri myUri) {
+                Log.d("Denna", "inside onCallback: " + myUri.toString());
+                imageUri = myUri;
+                p.setpImageResourceId(imageUri.toString());
+                LogInActivity.firebaseHelper.addDataPants(p);
+
+            }
+        });
+    }
+
+    public void uploadImage(Shirts s) {
+        imageUri = uploadImage(new StorageCallback() {
+            @Override
+            public void onCallback(Uri myUri) {
+                Log.d("Denna", "inside onCallback: " + myUri.toString());
+                imageUri = myUri;
+                s.setImageResourceId(imageUri.toString());
+                LogInActivity.firebaseHelper.addDataShirts(s);
+
+            }
+        });
+    }
+
+
+
+    private Uri uploadImage(StorageCallback storageCallback) {
+
+        final Uri[] uriToReturn = new Uri[1];
 
         // Lets user know if file is being uploaded
         progressDialog = new ProgressDialog(this);
@@ -101,8 +149,8 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.US);
         Date now = new Date();
         String fileName = formatter.format(now);
-        storageReference = FirebaseStorage.getInstance().getReference("images/"+fileName);
-
+        storageReference = FirebaseStorage.getInstance().getReference("images/" + fileName);
+        UploadTask uploadTask = (UploadTask) storageReference.putFile(imageUri);
         storageReference.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -112,7 +160,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                         Toast.makeText(UploadActivity.this, "Successfully Uploaded", Toast.LENGTH_SHORT).show();
 
                         // Tell the user if successfully uploaded
-                        if (progressDialog.isShowing()){
+                        if (progressDialog.isShowing()) {
                             progressDialog.dismiss();
                         }
                     }
@@ -121,15 +169,61 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                     public void onFailure(@NonNull Exception e) {
 
                         // Dismiss progress if failed
-                        if (progressDialog.isShowing()){
+                        if (progressDialog.isShowing()) {
                             progressDialog.dismiss();
                         }
                         Toast.makeText(UploadActivity.this, "Failed to Upload", Toast.LENGTH_SHORT).show();
                     }
                 });
 
+        // After the image has been uploaded, we can access the Task that was done and
+        // get the download Url.
+        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+            final Uri uriReturn = null;
+
+            @Override
+            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                if (!task.isSuccessful()) {
+                    throw task.getException();
+                } else {
+                    // Continue with the task to get the download URL
+                    // return null;
+                    Log.d("Denna", "is this line reached? " + storageReference.getDownloadUrl());
+                    Task<Uri> testUrl = storageReference.getDownloadUrl();
+
+                    return storageReference.getDownloadUrl();
+                }
+            }
+        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()) {
+                    Uri downloadUri = task.getResult();
+                    //   URL downloadURL = task.getResult();
+
+                    uriToReturn[0] = downloadUri;
+                    Log.d("Denna", "downloadUri I think is (NEW 9:04 pm): " + downloadUri);
+                    if (downloadUri instanceof Uri) {
+                        Log.d("Denna", "downloadUri is a URI");
+                    } else {
+                        Log.d("Denna", "downloadUri is NOT a URI");
+                    }
+                    storageCallback.onCallback(downloadUri);
+
+                } else {
+                    // Handle failures
+                    // ...
+                }
+            }
+        });
+        return uriToReturn[0];
 
     }
+
+
+
+
+
     private void selectImage() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -144,8 +238,9 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         // check if selectImage selected an image
         if (requestCode == 100 && data != null) {
             imageUri = data.getData();
-            binding.firebaseimage.setImageURI(imageUri);
-
+            //binding.firebaseimage.setImageURI(imageUri);
+            uriToAdd = imageUri.toString();
+            Log.i("Denna", "Uri:" + imageUri);
         }
     }
 
@@ -160,6 +255,40 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
+    // TRY this interface to see if can make the add method call pause until done getting the uri
+    public interface StorageCallback {
+        void onCallback(Uri myUri);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

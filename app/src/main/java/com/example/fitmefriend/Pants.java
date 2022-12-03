@@ -117,6 +117,6 @@ public class Pants implements Parcelable{
     }
 
     public void setpImageResourceId(String imageResourceId) {
-        this.pImageResourceId = pImageResourceId;
+        this.pImageResourceId = imageResourceId;
     }
 }

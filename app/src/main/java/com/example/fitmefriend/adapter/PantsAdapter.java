@@ -19,7 +19,7 @@ import com.example.fitmefriend.Pants;
 import java.util.List;
 
 public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHolder> {
-    private List<Pants> pantsList;
+    public List<Pants> pantsList;
     private Context context;
 
 

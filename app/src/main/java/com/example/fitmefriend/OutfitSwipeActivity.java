@@ -23,8 +23,8 @@ import java.util.List;
 
 public class OutfitSwipeActivity extends AppCompatActivity {
     private RecyclerView shirtRecyclerView, pantRecyclerView;
-    private List<Pants> pantsList = new ArrayList<>();
-    private List<Shirts> shirtsList = new ArrayList<>();
+    public static List<Pants> pantsList = new ArrayList<>();
+    public static List<Shirts> shirtsList = new ArrayList<>();
     private int lastPosition, lastPositionS;
 
 
@@ -59,6 +59,7 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         shirtRecyclerView.setAdapter(shirtsAdapter);
         SnapHelper z = new LinearSnapHelper();
         z.attachToRecyclerView(shirtRecyclerView);
+
 
 
 
@@ -99,9 +100,45 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         e.putInt("shirtLast", lastPositionS);
         e.apply();
     }
-   // public void makeOutfit(View view){
 
-  //  }
+    public int getLastPosition() {
+        return lastPosition;
+    }
+
+    public void setLastPosition(int lastPosition) {
+        this.lastPosition = lastPosition;
+    }
+
+    public int getLastPositionS() {
+        return lastPositionS;
+    }
+
+    public void setLastPositionS(int lastPositionS) {
+        this.lastPositionS = lastPositionS;
+    }
+
+  /*  public void makeOutfit(View view){
+            String shirtUrl = "";
+            String pantUrl = "";
+           for (int i = 0; i < shirtsList.size(); i++) {
+               if(lastPositionS == i){
+                   Shirts shirt = shirtsList.get(i);
+                   shirtUrl = shirt.getImageResourceId();
+                   Log.i("stephanie", shirtUrl);
+               }
+
+               for (int j = 0; j < pantsList.size(); i++) {
+                   if(lastPosition == j){
+                       Pants pant = pantsList.get(j);
+                       pantUrl = pant.getpImageResourceId();
+                       Log.i("vani", pantUrl);
+
+                   }
+
+               }
+           }
+
+   }*/
 
     public void saveWardrobe(View view) {
         Intent intent = new Intent(OutfitSwipeActivity.this, SavedOutfitsActivity.class);
@@ -124,7 +161,19 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         this.pantRecyclerView = pantRecyclerView;
     }
 
+    public static List<Pants> getPantsList() {
+        return pantsList;
+    }
 
+    public void setPantsList(List<Pants> pantsList) {
+        this.pantsList = pantsList;
+    }
 
+    public static List<Shirts> getShirtsList() {
+        return shirtsList;
+    }
 
+    public void setShirtsList(List<Shirts> shirtsList) {
+        this.shirtsList = shirtsList;
+    }
 }

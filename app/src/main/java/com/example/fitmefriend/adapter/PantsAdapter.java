@@ -16,15 +16,16 @@ import com.example.fitmefriend.OutfitSwipeActivity;
 import com.example.fitmefriend.R;
 import com.example.fitmefriend.Pants;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHolder> {
-    public List<Pants> pantsList;
+    ArrayList<Pants> pantsList;
     private Context context;
 
 
 
-    public PantsAdapter(List<Pants> pantsList, Context context) {
+    public PantsAdapter(ArrayList<Pants> pantsList, Context context) {
         this.pantsList = pantsList;
         this.context = context;
     }
@@ -69,7 +70,7 @@ public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHol
         return pantsList;
     }
 
-    public void setPantsList(List<Pants> pantsList) {
+    public void setPantsList(ArrayList<Pants> pantsList) {
         this.pantsList = pantsList;
     }
 }

@@ -20,9 +20,9 @@ import java.util.List;
 
 public class ShirtsAdapter extends RecyclerView.Adapter<ShirtsAdapter.ShirtsViewHolder> {
     private Context context;
-    public List<Shirts> shirtsList;
+    public ArrayList<Shirts> shirtsList;
 
-    public ShirtsAdapter(List<Shirts> shirtsList, Context context) {
+    public ShirtsAdapter(ArrayList<Shirts> shirtsList, Context context) {
         this.shirtsList = shirtsList;
         this.context = context;
     }

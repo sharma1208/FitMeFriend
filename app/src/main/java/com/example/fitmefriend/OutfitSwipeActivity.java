@@ -23,8 +23,8 @@ import java.util.List;
 
 public class OutfitSwipeActivity extends AppCompatActivity {
     private RecyclerView shirtRecyclerView, pantRecyclerView;
-    public static List<Pants> pantsList = new ArrayList<>();
-    public static List<Shirts> shirtsList = new ArrayList<>();
+    public static ArrayList<Pants> pantsList = new ArrayList<>();
+    public static ArrayList<Shirts> shirtsList = new ArrayList<>();
     private int lastPosition, lastPositionS;
 
 
@@ -165,7 +165,7 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         return pantsList;
     }
 
-    public void setPantsList(List<Pants> pantsList) {
+    public void setPantsList(ArrayList<Pants> pantsList) {
         this.pantsList = pantsList;
     }
 
@@ -173,7 +173,7 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         return shirtsList;
     }
 
-    public void setShirtsList(List<Shirts> shirtsList) {
+    public void setShirtsList(ArrayList<Shirts> shirtsList) {
         this.shirtsList = shirtsList;
     }
 }

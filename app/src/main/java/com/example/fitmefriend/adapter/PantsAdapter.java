@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.fitmefriend.OutfitSwipeActivity;
 import com.example.fitmefriend.R;
 import com.example.fitmefriend.Pants;
@@ -43,7 +44,10 @@ public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHol
     @Override
     public void onBindViewHolder(@NonNull PantsViewHolder holder, int position) {
         Pants p= pantsList.get(position);
-        holder.mImageView.setImageResource(Integer.parseInt(p.getpImageResourceId()));
+        //holder.mImageView.setImageResource(Integer.parseInt(p.getpImageResourceId()));
+        Log.i("Scary",p.getpImageResourceId());
+        Glide.with(context).load(p.getpImageResourceId()).placeholder(R.drawable.ic_baseline_favorite_24).
+                error(R.drawable.ic_baseline_favorite_border_24).centerCrop().into(holder.mImageView);
 
     }
 
@@ -57,6 +61,7 @@ public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHol
         private ImageView mImageView;
         public PantsViewHolder(@NonNull View itemView){
             super(itemView);
+
 
 
             mImageView = itemView.findViewById(R.id.bestSellerImage);

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Pants implements Parcelable{
     private String pCategory;
-    private  String pImageResourceId;
+    private String pImageResourceId;
     private String pdocId;
 
 

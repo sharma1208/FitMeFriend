@@ -48,7 +48,7 @@ public class FirebaseHelper {
     public final String TAG = "Denna";
     private static String uid = null;      // var will be updated for currently signed in user
     private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+    private static FirebaseFirestore db;
 
 
     public FirebaseHelper() {
@@ -274,8 +274,24 @@ certain things from occurring until after the onSuccess is finished.
     }
 
 
+    public static String getUid() {
+        return uid;
+    }
 
+    public static void setUid(String uid) {
+        FirebaseHelper.uid = uid;
+    }
 
+    public void setmAuth(FirebaseAuth mAuth) {
+        this.mAuth = mAuth;
+    }
 
+    public static FirebaseFirestore getDb() {
+        return db;
+    }
+
+    public void setDb(FirebaseFirestore db) {
+        this.db = db;
+    }
 }
 

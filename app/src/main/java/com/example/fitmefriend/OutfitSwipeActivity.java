@@ -17,24 +17,28 @@ import android.widget.Button;
 
 import com.example.fitmefriend.adapter.PantsAdapter;
 import com.example.fitmefriend.adapter.ShirtsAdapter;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OutfitSwipeActivity extends AppCompatActivity {
+
     private RecyclerView shirtRecyclerView, pantRecyclerView;
     public static ArrayList<Pants> pantsList = new ArrayList<>();
     public static ArrayList<Shirts> shirtsList = new ArrayList<>();
+
     private int lastPosition, lastPositionS;
+    public String url = "";
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outfit_swipe);
-
-
-
+        
 
         shirtRecyclerView = findViewById(R.id.shirtRecyclerView);
         shirtRecyclerView.setHasFixedSize(true);
@@ -117,34 +121,40 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         this.lastPositionS = lastPositionS;
     }
 
-  /*  public void makeOutfit(View view){
-            String shirtUrl = "";
-            String pantUrl = "";
-           for (int i = 0; i < shirtsList.size(); i++) {
-               if(lastPositionS == i){
-                   Shirts shirt = shirtsList.get(i);
-                   shirtUrl = shirt.getImageResourceId();
-                   Log.i("stephanie", shirtUrl);
-               }
 
-               for (int j = 0; j < pantsList.size(); i++) {
-                   if(lastPosition == j){
-                       Pants pant = pantsList.get(j);
-                       pantUrl = pant.getpImageResourceId();
-                       Log.i("vani", pantUrl);
+  public void makeOutfit(View view){
 
-                   }
 
-               }
-           }
+        for(int i=0; i<shirtsList.size(); i++){
+            if(lastPositionS == i){
 
-   }*/
+                Shirts shirt = shirtsList.get(i);
+                url = shirt.getImageResourceId();
+                Log.i("stephanie", String.valueOf(url));
+            }
+        }
+        for(int i = 0; i < pantsList.size(); i++){
+            if(lastPosition == i){
+                Pants pants = pantsList.get(i);
+                url = pants.getpImageResourceId();
+                Log.i("vani", String.valueOf(url));
 
-    public void saveWardrobe(View view) {
-        Intent intent = new Intent(OutfitSwipeActivity.this, SavedOutfitsActivity.class);
-        startActivity(intent);
+            }
 
-    }
+        }
+
+
+
+
+
+
+
+
+
+
+   }
+
+
     public RecyclerView getShirtRecyclerView() {
         return shirtRecyclerView;
     }

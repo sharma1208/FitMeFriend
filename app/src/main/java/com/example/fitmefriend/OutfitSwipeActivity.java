@@ -14,6 +14,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.fitmefriend.adapter.PantsAdapter;
 import com.example.fitmefriend.adapter.ShirtsAdapter;
@@ -142,15 +143,7 @@ public class OutfitSwipeActivity extends AppCompatActivity {
             }
 
         }
-
-
-
-
-
-
-
-
-
+      Toast.makeText(OutfitSwipeActivity.this, "You saved an outfit!", Toast.LENGTH_SHORT).show();
 
    }
 

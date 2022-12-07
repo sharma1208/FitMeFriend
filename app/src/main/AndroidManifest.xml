@@ -20,7 +20,7 @@
             android:name=".WardrobeMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".OutfitSwipeActivity"
+            android:name=".LogInActivity"
             android:exported="false" />
         <activity
             android:name=".ViewClothesActivity"
@@ -32,10 +32,10 @@
             android:name=".SavedOutfitsActivity"
             android:exported="false" />
         <activity
-            android:name=".OptionsActivity"
+            android:name=".OutfitSwipeActivity"
             android:exported="false" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".OptionsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

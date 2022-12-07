@@ -1,5 +1,7 @@
 package com.example.fitmefriend;
 
+import static com.example.fitmefriend.SavedOutfitsActivity.outfitList;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,7 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OutfitSwipeActivity extends AppCompatActivity {
-
     private RecyclerView shirtRecyclerView, pantRecyclerView;
     public static ArrayList<Pants> pantsList = new ArrayList<>();
     public static ArrayList<Shirts> shirtsList = new ArrayList<>();
@@ -94,6 +95,8 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         pantRecyclerView.setAdapter(pantsAdapter);
         SnapHelper H = new LinearSnapHelper();
         H.attachToRecyclerView(pantRecyclerView);
+
+
     }
     @Override
     protected void onDestroy() {
@@ -106,6 +109,34 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         e.apply();
     }
 
+
+    public void makeOutfit(View view){
+        Outfits o;
+        Shirts shirt = new Shirts();
+        Pants pants = new Pants();
+
+        for(int i=0; i<shirtsList.size(); i++){
+            if(lastPositionS == i){
+
+                shirt = shirtsList.get(i);
+                url = shirt.getImageResourceId();
+                Log.i("stephanie", String.valueOf(url));
+            }
+        }
+        for(int i = 0; i < pantsList.size(); i++){
+            if(lastPosition == i){
+                pants = pantsList.get(i);
+                url = pants.getpImageResourceId();
+                Log.i("vani", String.valueOf(url));
+
+            }
+
+        }
+        o = new Outfits(shirt,pants);
+        outfitList.add(o);
+      Toast.makeText(OutfitSwipeActivity.this, "You saved an outfit!", Toast.LENGTH_SHORT).show();
+
+   }
     public int getLastPosition() {
         return lastPosition;
     }
@@ -123,29 +154,6 @@ public class OutfitSwipeActivity extends AppCompatActivity {
     }
 
 
-  public void makeOutfit(View view){
-
-
-        for(int i=0; i<shirtsList.size(); i++){
-            if(lastPositionS == i){
-
-                Shirts shirt = shirtsList.get(i);
-                url = shirt.getImageResourceId();
-                Log.i("stephanie", String.valueOf(url));
-            }
-        }
-        for(int i = 0; i < pantsList.size(); i++){
-            if(lastPosition == i){
-                Pants pants = pantsList.get(i);
-                url = pants.getpImageResourceId();
-                Log.i("vani", String.valueOf(url));
-
-            }
-
-        }
-      Toast.makeText(OutfitSwipeActivity.this, "You saved an outfit!", Toast.LENGTH_SHORT).show();
-
-   }
 
 
     public RecyclerView getShirtRecyclerView() {

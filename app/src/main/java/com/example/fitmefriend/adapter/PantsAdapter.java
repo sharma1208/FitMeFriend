@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 //import com.bumptech.glide.Glide;
+import com.bumptech.glide.Glide;
 import com.example.fitmefriend.OutfitSwipeActivity;
 import com.example.fitmefriend.R;
 import com.example.fitmefriend.Pants;
@@ -46,8 +47,8 @@ public class PantsAdapter extends RecyclerView.Adapter<PantsAdapter.PantsViewHol
         Pants p= pantsList.get(position);
         //holder.mImageView.setImageResource(Integer.parseInt(p.getpImageResourceId()));
         Log.i("Scary",p.getpImageResourceId());
-        //Glide.with(context).load(p.getpImageResourceId()).placeholder(R.drawable.ic_baseline_favorite_24).
-                //error(R.drawable.ic_baseline_favorite_border_24).centerCrop().into(holder.mImageView);
+        Glide.with(context).load(p.getpImageResourceId()).placeholder(R.drawable.ic_baseline_favorite_24).
+                error(R.drawable.ic_baseline_favorite_border_24).centerCrop().into(holder.mImageView);
 
     }
 

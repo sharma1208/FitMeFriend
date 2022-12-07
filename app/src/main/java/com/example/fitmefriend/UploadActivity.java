@@ -1,5 +1,7 @@
 package com.example.fitmefriend;
 
+
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -34,6 +36,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -46,6 +49,8 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     ProgressDialog progressDialog;
     TextView spinnerCategory;
     String uriToAdd = "none";
+    public static ArrayList<Pants> pantsList;
+    public static ArrayList<Shirts> shirtsList;
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -55,7 +60,8 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         binding = ActivityUploadBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        pantsList = new ArrayList<>();
+        shirtsList = new ArrayList<>();
         binding.selectImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,16 +95,21 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         Log.d("Denna", "Completed ur mom");
         String imageStringUri = imageUri.toString();
         if (spinnerSelectedText.equals("Shirt")) {
-
             Shirts m = new Shirts("Shirt", imageStringUri);
+            shirtsList.add(m);
+
             m.setImageResourceId(uriToAdd);     // testing w denna
             //LogInActivity.firebaseHelper.addDataShirts(m);
             uploadImage(m);
+
+
         } else {
             Pants p = new Pants("Pant", imageStringUri);
+            pantsList.add(p);
             //LogInActivity.firebaseHelper.addDataPants(p);
             p.setpImageResourceId(uriToAdd);
             uploadImage(p);
+            Log.i("denna", String.valueOf(pantsList));
         }
 
 
@@ -117,6 +128,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                 p.setpImageResourceId(imageUri.toString());
                 LogInActivity.firebaseHelper.addDataPants(p);
 
+
             }
         });
     }
@@ -129,7 +141,6 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                 imageUri = myUri;
                 s.setImageResourceId(imageUri.toString());
                 LogInActivity.firebaseHelper.addDataShirts(s);
-
             }
         });
     }

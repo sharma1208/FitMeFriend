@@ -1,6 +1,8 @@
 package com.example.fitmefriend;
 
 import static com.example.fitmefriend.SavedOutfitsActivity.outfitList;
+import static com.example.fitmefriend.UploadActivity.pantsList;
+import static com.example.fitmefriend.UploadActivity.shirtsList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,8 +30,7 @@ import java.util.List;
 
 public class OutfitSwipeActivity extends AppCompatActivity {
     private RecyclerView shirtRecyclerView, pantRecyclerView;
-    public static ArrayList<Pants> pantsList = new ArrayList<>();
-    public static ArrayList<Shirts> shirtsList = new ArrayList<>();
+
 
     private int lastPosition, lastPositionS;
     public String url = "";
@@ -40,37 +41,17 @@ public class OutfitSwipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outfit_swipe);
-        
-
-        shirtRecyclerView = findViewById(R.id.shirtRecyclerView);
-        shirtRecyclerView.setHasFixedSize(true);
-        final LinearLayoutManager layoutManagerS = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
-        shirtRecyclerView.setLayoutManager(layoutManagerS);
-        SharedPreferences getPrefsS = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        lastPositionS = getPrefsS.getInt("lastPos", 0);
-        shirtRecyclerView.scrollToPosition(lastPositionS);
-        shirtRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-                lastPositionS = layoutManagerS.findFirstVisibleItemPosition();
-                Log.i("shirt",(String.valueOf(lastPositionS)));
-            }
-        });
-
-        shirtsList.add(new Shirts(Integer.toString(R.drawable.sampleimage)));
-        shirtsList.add(new Shirts(Integer.toString(R.drawable.sampleimage)));
-        shirtsList.add(new Shirts(Integer.toString(R.drawable.sampleimage)));
-        ShirtsAdapter shirtsAdapter = new ShirtsAdapter(shirtsList, this);
-        shirtRecyclerView.setAdapter(shirtsAdapter);
-        SnapHelper z = new LinearSnapHelper();
-        z.attachToRecyclerView(shirtRecyclerView);
-
 
 
 
         pantRecyclerView = findViewById(R.id.pantRecyclerView);
         pantRecyclerView.setHasFixedSize(true);
+
+        
+
+        shirtRecyclerView = findViewById(R.id.shirtRecyclerView);
+        shirtRecyclerView.setHasFixedSize(true);
+
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
         pantRecyclerView.setLayoutManager(layoutManager);
         SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
@@ -86,18 +67,40 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         });
 
 
-        pantsList.add(new Pants(Integer.toString(R.drawable.sampleimage)));
-        pantsList.add(new Pants(Integer.toString(R.drawable.sampleimage)));
-        pantsList.add(new Pants(Integer.toString(R.drawable.sampleimage)));
-        pantsList.add(new Pants(Integer.toString(R.drawable.sampleimage)));
-        pantsList.add(new Pants(Integer.toString(R.drawable.sampleimage)));
+
         PantsAdapter pantsAdapter = new PantsAdapter(pantsList, this);
         pantRecyclerView.setAdapter(pantsAdapter);
         SnapHelper H = new LinearSnapHelper();
         H.attachToRecyclerView(pantRecyclerView);
 
+        final LinearLayoutManager layoutManagerS = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
+        shirtRecyclerView.setLayoutManager(layoutManagerS);
+        SharedPreferences getPrefsS = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        lastPositionS = getPrefsS.getInt("lastPos", 0);
+        shirtRecyclerView.scrollToPosition(lastPositionS);
+        shirtRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                lastPositionS = layoutManagerS.findFirstVisibleItemPosition();
+                Log.i("shirt",(String.valueOf(lastPositionS)));
+            }
+        });
+
+
+        ShirtsAdapter shirtsAdapter = new ShirtsAdapter(shirtsList, this);
+        shirtRecyclerView.setAdapter(shirtsAdapter);
+        SnapHelper z = new LinearSnapHelper();
+        z.attachToRecyclerView(shirtRecyclerView);
+
+
+
+
+
 
     }
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -172,19 +175,5 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         this.pantRecyclerView = pantRecyclerView;
     }
 
-    public static List<Pants> getPantsList() {
-        return pantsList;
-    }
 
-    public void setPantsList(ArrayList<Pants> pantsList) {
-        this.pantsList = pantsList;
-    }
-
-    public static List<Shirts> getShirtsList() {
-        return shirtsList;
-    }
-
-    public void setShirtsList(ArrayList<Shirts> shirtsList) {
-        this.shirtsList = shirtsList;
-    }
 }

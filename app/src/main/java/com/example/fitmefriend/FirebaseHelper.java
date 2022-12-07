@@ -81,7 +81,7 @@ public class FirebaseHelper {
             readDataPants(new FirestoreCallbackPants() {
                 @Override
                 public void onCallback(ArrayList<Pants> pantsArrayList) {
-                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + OutfitSwipeActivity.pantsList.toString());
+                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + UploadActivity.pantsList.toString());
                 }
             });
         }
@@ -98,7 +98,7 @@ public class FirebaseHelper {
             readDataShirts(new FirestoreCallbackShirts() {
                 @Override
                 public void onCallback(ArrayList<Shirts> shirtsArrayList) {
-                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + OutfitSwipeActivity.shirtsList.toString());
+                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + UploadActivity.shirtsList.toString());
                 }
             });
         }
@@ -135,7 +135,7 @@ public class FirebaseHelper {
         addDataPants(p, new FirestoreCallbackPants() {
             @Override
             public void onCallback(ArrayList<Pants> myList) {
-                Log.i(TAG, "Inside addData, onCallback :" + OutfitSwipeActivity.pantsList.toString());
+                Log.i(TAG, "Inside addData, onCallback :" + UploadActivity.pantsList.toString());
             }
         });
     }
@@ -146,7 +146,7 @@ public class FirebaseHelper {
         addDataShirts(s, new FirestoreCallbackShirts() {
             @Override
             public void onCallback(ArrayList<Shirts> myList) {
-                Log.i(TAG, "Inside addData, onCallback :"  + OutfitSwipeActivity.shirtsList.toString());
+                Log.i(TAG, "Inside addData, onCallback :"  + UploadActivity.shirtsList.toString());
             }
         });
     }
@@ -207,52 +207,53 @@ certain things from occurring until after the onSuccess is finished.
 */
 
     private void readDataPants(FirestoreCallbackPants firestoreCallbackPants) {
-        OutfitSwipeActivity.pantsList.clear();        // empties the AL so that it can get a fresh copy of data
-        db.collection("users").document(uid).collection("myPants")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (DocumentSnapshot doc: task.getResult()) {
-                                Pants pants = doc.toObject(Pants.class);
-                                OutfitSwipeActivity.pantsList.add(pants);
+        if (UploadActivity.pantsList != null) {
+            //UploadActivity.pantsList.clear();        // empties the AL so that it can get a fresh copy of data
+            db.collection("users").document(uid).collection("myPants")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for (DocumentSnapshot doc : task.getResult()) {
+                                    Pants pants = doc.toObject(Pants.class);
+                                    UploadActivity.pantsList.add(pants);
 
+                                }
+
+                                Log.i(TAG, "Success reading data: " + UploadActivity.pantsList.toString());
+                                firestoreCallbackPants.onCallback(UploadActivity.pantsList);
+                            } else {
+                                Log.d(TAG, "Error getting documents: " + task.getException());
                             }
-
-                            Log.i(TAG, "Success reading data: "+  OutfitSwipeActivity.pantsList.toString());
-                            firestoreCallbackPants.onCallback(OutfitSwipeActivity.pantsList);
                         }
-                        else {
-                            Log.d(TAG, "Error getting documents: " + task.getException());
-                        }
-                    }
-                });
-
+                    });
+        }
     }
 
     private void readDataShirts(FirestoreCallbackShirts firestoreCallbackShirts) {
-        OutfitSwipeActivity.shirtsList.clear();
-        db.collection("users").document(uid).collection("myShirts")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (DocumentSnapshot doc: task.getResult()) {
-                                Shirts shirts = doc.toObject(Shirts.class);
-                                 OutfitSwipeActivity.shirtsList.add(shirts);
+        if (UploadActivity.shirtsList != null) {
+            //UploadActivity.shirtsList.clear();
+            db.collection("users").document(uid).collection("myShirts")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for (DocumentSnapshot doc : task.getResult()) {
+                                    Shirts shirts = doc.toObject(Shirts.class);
+                                    UploadActivity.shirtsList.add(shirts);
 
+                                }
+
+                                    Log.i(TAG, "Success reading data: " + UploadActivity.shirtsList.toString());
+                                firestoreCallbackShirts.onCallback(UploadActivity.shirtsList);
+                            } else {
+                                Log.d(TAG, "Error getting documents: " + task.getException());
                             }
-
-                            Log.i(TAG, "Success reading data: "+ OutfitSwipeActivity.shirtsList.toString());
-                            firestoreCallbackShirts.onCallback(OutfitSwipeActivity.shirtsList);
                         }
-                        else {
-                            Log.d(TAG, "Error getting documents: " + task.getException());
-                        }
-                    }
-                });
+                    });
+        }
 
     }
 

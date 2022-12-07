@@ -49,8 +49,8 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     ProgressDialog progressDialog;
     TextView spinnerCategory;
     String uriToAdd = "none";
-    public static ArrayList<Pants> pantsList;
-    public static ArrayList<Shirts> shirtsList;
+    public static ArrayList<Pants> pantsList = new ArrayList<>();;
+    public static ArrayList<Shirts> shirtsList =  new ArrayList<>();;
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -60,8 +60,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         binding = ActivityUploadBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        pantsList = new ArrayList<>();
-        shirtsList = new ArrayList<>();
+
         binding.selectImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

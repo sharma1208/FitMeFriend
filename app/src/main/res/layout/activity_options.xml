@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     android:backgroundTint="@color/backgroundColor"
-    android:onClick="Swipe"
     tools:context=".OptionsActivity">
 
     <Button

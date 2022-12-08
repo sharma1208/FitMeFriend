@@ -3,20 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.196" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.2165" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml" value="0.2165" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/ic_baseline_swap_horizontal_circle_24.xml" value="0.2165" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/upload.xml" value="0.2165" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_log_in.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_options.xml" value="0.33" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_outfit_swipe.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_saved_outfits.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_upload.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_view_clothes.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_wardrobe_menu.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/ilike/OneDrive/Documents/GitHub/FitMeFriend/app/src/main/res/layout/spinner_list.xml" value="0.36102564102564105" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2855" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_options.xml" value="0.1" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/FitMeFriend/app/src/main/res/layout/activity_outfit_swipe.xml" value="0.33" />
@@ -60,6 +46,9 @@
         <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/pant_layout.xml" value="0.1" />
         <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/shirt_layout.xml" value="0.1" />
         <entry key="..\:/Users/vanir/Documents/GitHub/FitMeFriend/app/src/main/res/layout/spinner_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_options.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_outfit_swipe.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_upload.xml" value="0.17074275362318841" />
       </map>
     </option>
   </component>

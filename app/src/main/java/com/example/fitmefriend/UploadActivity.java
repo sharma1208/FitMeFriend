@@ -93,7 +93,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         // Everyone needs this part below this comment
         Log.d("Denna", "Completed ur mom");
         String imageStringUri = imageUri.toString();
-        if (spinnerSelectedText.equals("Shirt")) {
+        if (spinnerSelectedText.equals("shirts")) {
             Shirts m = new Shirts("Shirt", imageStringUri);
             shirtsList.add(m);
 
@@ -103,7 +103,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
 
 
         } else {
-            Pants p = new Pants("Pant", imageStringUri);
+            Pants p = new Pants("pants", imageStringUri);
             pantsList.add(p);
             //LogInActivity.firebaseHelper.addDataPants(p);
             p.setpImageResourceId(uriToAdd);

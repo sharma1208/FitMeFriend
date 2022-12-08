@@ -30,7 +30,7 @@ public class OptionsActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void WardrobeMenu(View view) {
-        Intent intent = new Intent(OptionsActivity.this, WardrobeMenuActivity.class);
+        Intent intent = new Intent(OptionsActivity.this, SavedOutfitsActivity.class);
         startActivity(intent);
     }
 

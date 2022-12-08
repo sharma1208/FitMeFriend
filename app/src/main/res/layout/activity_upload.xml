@@ -22,24 +22,24 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.129" />
 
     <ImageView
         android:id="@+id/firebaseimage"
         android:layout_width="173dp"
         android:layout_height="156dp"
+        android:src="@drawable/flogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302"
-        tools:srcCompat="@drawable/flogo" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <Button
         android:id="@+id/selectImageButton"
         style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="105dp"
-        android:layout_height="47dp"
+        android:layout_width="154dp"
+        android:layout_height="45dp"
         android:backgroundTint="@color/primaryDarkColor"
         android:shadowColor="@android:color/transparent"
         android:shadowDx="0"
@@ -53,14 +53,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/uploadImageButton"
         style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="238dp"
-        android:layout_height="53dp"
+        android:layout_width="210dp"
+        android:layout_height="56dp"
         android:backgroundTint="@color/primaryTextColor"
         android:shadowColor="@android:color/transparent"
         android:shadowDx="0"
@@ -75,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
+        app:layout_constraintVertical_bias="0.814" />
 
     <Spinner
         android:id="@+id/mySpinner"
@@ -87,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.624" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

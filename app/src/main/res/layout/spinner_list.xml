@@ -3,10 +3,11 @@
     android:id="@+id/priorityChosen"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:background="@color/secondaryDarkColor"
+    android:background="@color/primaryDarkColor"
     android:fontFamily="@font/biryani_bold"
     android:text="category"
     android:textAlignment="center"
+    android:textAllCaps="false"
     android:textColor="@color/backgroundColor"
     android:textSize="20dp"
     android:textStyle="bold" />

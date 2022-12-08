@@ -10,92 +10,26 @@
     tools:context=".OptionsActivity">
 
     <Button
-        android:id="@+id/swipe"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="238dp"
-        android:layout_height="53dp"
-        android:backgroundTint="@color/primaryDarkColor"
-        android:onClick="Swipe"
-        android:shadowColor="@android:color/transparent"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="0"
-        android:text="swipe"
-        android:textColor="@color/backgroundColor"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
-
-    <Button
-        android:id="@+id/wardrobeMenu"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="238dp"
-        android:layout_height="53dp"
-        android:backgroundTint="@color/primaryDarkColor"
-        android:onClick="WardrobeMenu"
-        android:shadowColor="@android:color/transparent"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="0"
-        android:text="wardrobe menu"
-        android:textColor="@color/backgroundColor"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634" />
-
-    <Button
         android:id="@+id/logOutButton"
         style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="238dp"
         android:layout_height="53dp"
-        android:backgroundTint="@color/primaryDarkColor"
+        android:backgroundTint="@color/backgroundColor"
         android:onClick="logOutClicked"
         android:shadowColor="@android:color/transparent"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="0"
         android:text="log out"
-        android:textColor="@color/backgroundColor"
-        android:textSize="25dp"
+        android:textColor="@color/primaryDarkColor"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
-
-    <Button
-        android:id="@+id/savedOutfits"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="238dp"
-        android:layout_height="53dp"
-        android:backgroundTint="@color/primaryTextColor"
-        android:onClick="Swipe"
-        android:shadowColor="@android:color/transparent"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="0"
-        android:text="saved outfits"
-        android:textColor="@color/backgroundColor"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" />
+        app:layout_constraintVertical_bias="0.815" />
 
     <Button
         android:id="@+id/uploadImage"
@@ -109,15 +43,62 @@
         android:shadowDy="0"
         android:shadowRadius="0"
         android:text="upload image"
+        android:textAlignment="viewStart"
         android:textColor="@color/backgroundColor"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.699"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" />
+        app:layout_constraintVertical_bias="0.315" />
+
+    <Button
+        android:id="@+id/swipe"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="238dp"
+        android:layout_height="53dp"
+        android:backgroundTint="@color/primaryDarkColor"
+        android:onClick="Swipe"
+        android:shadowColor="@android:color/transparent"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:text="swipe"
+        android:textAlignment="viewStart"
+        android:textColor="@color/backgroundColor"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
+
+    <Button
+        android:id="@+id/wardrobeMenu"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="238dp"
+        android:layout_height="53dp"
+        android:backgroundTint="@color/primaryDarkColor"
+        android:onClick="WardrobeMenu"
+        android:shadowColor="@android:color/transparent"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:text="saved outfits"
+        android:textAlignment="viewStart"
+        android:textColor="@color/backgroundColor"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.526" />
 
     <TextView
         android:id="@+id/menuName"
@@ -135,7 +116,45 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintVertical_bias="0.167" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="52dp"
+        android:layout_height="53dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/wardrobeMenu"
+        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.526"
+        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="56dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/primaryTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316"
+        app:srcCompat="@drawable/upload" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="55dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/primaryTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.427"
+        app:srcCompat="@drawable/ic_baseline_swap_horizontal_circle_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

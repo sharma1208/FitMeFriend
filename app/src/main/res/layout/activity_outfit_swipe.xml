@@ -47,14 +47,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+
     <Button
         android:id="@+id/ssButton"
-        android:onClick="makeOutfit"
         android:layout_width="89dp"
         android:layout_height="82dp"
+        android:layout_marginTop="551dp"
         android:background="@drawable/ic_baseline_favorite_24"
         android:capitalize="none"
         android:fontFamily="@font/biryani_bold"
+        android:onClick="makeOutfit"
         android:text="save"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -64,9 +66,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

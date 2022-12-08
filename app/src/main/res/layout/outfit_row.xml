@@ -22,14 +22,14 @@
 
             <ImageView
                 android:id="@+id/shirt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="400dp"
+                android:layout_height="175dp"
                 app:srcCompat="@drawable/reallegitlogo" />
 
             <ImageView
                 android:id="@+id/pant"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="400dp"
+                android:layout_height="175dp"
                 app:srcCompat="@drawable/flogo" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -137,6 +137,7 @@ public class OutfitSwipeActivity extends AppCompatActivity {
         }
         o = new Outfits(shirt,pants);
         outfitList.add(o);
+        Log.i("venya", String.valueOf(o));
       Toast.makeText(OutfitSwipeActivity.this, "You saved an outfit!", Toast.LENGTH_SHORT).show();
 
    }

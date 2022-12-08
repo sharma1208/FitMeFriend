@@ -43,7 +43,7 @@ public class ShirtsAdapter extends RecyclerView.Adapter<ShirtsAdapter.ShirtsView
         //holder.mImageView.setImageResource(Integer.parseInt(p.getpImageResourceId()));
         Log.i("Scary",s.getImageResourceId());
         Glide.with(context).load(s.getImageResourceId()).placeholder(R.drawable.ic_baseline_favorite_24).
-                error(R.drawable.ic_baseline_favorite_border_24).centerCrop().into(holder.mImageView);;
+                error(R.drawable.ic_baseline_favorite_border_24).centerCrop().into(holder.mImageView);
     }
 
     @Override

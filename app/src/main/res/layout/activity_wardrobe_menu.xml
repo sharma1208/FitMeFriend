@@ -29,28 +29,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.393" />
 
-    <Button
-        android:id="@+id/all_clothes_button"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="238dp"
-        android:layout_height="53dp"
-        android:backgroundTint="@color/primaryDarkColor"
-        android:onClick="allMyClothesClicked"
-        android:shadowColor="@android:color/transparent"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="0"
-        android:text="view all clothes"
-        android:textColor="@color/backgroundColor"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
-
     <TextView
         android:id="@+id/wardrobeMenuTV"
         android:layout_width="wrap_content"
